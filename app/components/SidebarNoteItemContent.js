@@ -73,15 +73,15 @@ export default function SidebarNoteContent({
         {isExpanded ? (
           <Image
             src="/chevron-down.svg"
-            width="10px"
-            height="10px"
+            width={10}
+            height={10}
             alt="Collapse"
           />
         ) : (
           <Image
             src="/chevron-up.svg"
-            width="10px"
-            height="10px"
+            width={10}
+            height={10}
             alt="Expand"
           />
         )}
