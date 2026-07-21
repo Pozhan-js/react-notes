@@ -78,12 +78,7 @@ export default function SidebarNoteContent({
             alt="Collapse"
           />
         ) : (
-          <Image
-            src="/chevron-up.svg"
-            width={10}
-            height={10}
-            alt="Expand"
-          />
+          <Image src="/chevron-up.svg" width={10} height={10} alt="Expand" />
         )}
       </button>
       {isExpanded && expandedChildren}
