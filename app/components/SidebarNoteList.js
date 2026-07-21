@@ -1,8 +1,8 @@
 import SidebarNoteItem from "@/components/SidebarNoteItem";
 
 export default async function NoteList({ notes }) {
-  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-  await sleep(10000);
+  //   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  //   await sleep(10000);
   const arr = Object.entries(notes);
 
   if (arr.length == 0) {
