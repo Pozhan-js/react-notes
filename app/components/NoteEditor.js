@@ -37,12 +37,13 @@ export default function NoteEditor({ noteId, initialTitle, initialBody }) {
       </form>
       <div className="note-editor-preview">
         <form className="note-editor-menu" role="menubar">
+          <input type="hidden" name="noteId" value={noteId} />
           <button
             className="note-editor-done"
             disabled={pending}
             type="submit"
+            formAction={saveNote}
             role="menuitem"
-            formAction={() => saveNote(noteId, title, body)}
           >
             <Image
               src="/checkmark.svg"
@@ -57,7 +58,7 @@ export default function NoteEditor({ noteId, initialTitle, initialBody }) {
             <button
               className="note-editor-delete"
               disabled={pending}
-              formAction={() => deleteNote(noteId)}
+              formAction={deleteNote}
               role="menuitem"
             >
               <Image
