@@ -1,13 +1,19 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getAllNotes } from "@/lib/redis";
 import SidebarSearchField from "@/components/SidebarSearchField";
 import SidebarNoteList from "@/components/SidebarNoteList";
 import EditButton from "@/components/EditButton";
 import NoteListSkeleton from "@/components/NoteListSkeleton";
+import {
+  useTranslations,
+  NextIntlClientProvider,
+  useMessages,
+} from "next-intl";
 
-export default async function Sidebar() {
+export default function Sidebar() {
+  const t = useTranslations("Basic");
+  const messages = useMessages();
   return (
     <>
       <section className="col sidebar">
@@ -25,8 +31,14 @@ export default async function Sidebar() {
           </section>
         </Link>
         <section className="sidebar-menu" role="menubar">
-          <SidebarSearchField />
-          <EditButton noteId={null}>New</EditButton>
+          <NextIntlClientProvider
+            messages={{
+              Basic: messages.Basic,
+            }}
+          >
+            <SidebarSearchField search={t("search")} />
+          </NextIntlClientProvider>
+          <EditButton noteId={null}>{t("new")}</EditButton>
           {/* SideSearchField */}
         </section>
         <nav>
