@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/components/*": ["./app/components/*"],
-      "@/lib/*": ["./app/lib/*"]
+      "@/components/*": ["./app/[locale]/components/*"],
+      "@/lib/*": ["./app/[locale]/lib/*"],
+      "@/actions": ["./app/[locale]/actions.js"],
+      "@/*": ["./*"]
     }
   }
 }
